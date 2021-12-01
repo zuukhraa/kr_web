@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(document).on("click", "#ajax-button", function () {
+            alert("hello");
+            $.get("/busTime", function (responseText) {
+                alert("hgchj");
+                $("#ajax-div").text(responseText);
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+<form method="get">
+    <input type="text" name="garagNumb" placeholder="Введите номер гаража"/>
+    <input type="hidden"/>
+    <input type="button" id="ajax-button" value="Найти маршрут">
+</form>
+
+<div id="ajax-div"></div>
+
+</body>
+</html>
